@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var obj = {//new Object();
+        name: 'lisi',
+        age: 23
+    };
+
+    Object.defineProperty(obj, 'xx', {
+        value: 11,
+        writable: false,
+        enumerable: true
+    });
+
+    function Person(name, age){
+        this.name = name;
+        this.age = age;
+    }
+
+    function Cat(){
+
+    }
+
+    var p1 = new Person('lisi', 23);
+
+    obj.xx = 22;
+    console.log(  obj.xx  );
+
+    console.log(obj.propertyIsEnumerable('xx'));
+
+    for(var p in obj){
+        console.log(  p );
+    }
+
+
+//    console.log(  Object.prototype.isPrototypeOf(obj)    );
+//    console.log(  Cat.prototype.isPrototypeOf(p1)    );
+
+//        console.log(obj.propertyIsEnumerable('constructor'));
+
+//    alert(   obj.hasOwnProperty('name')   );
+//    alert(   obj.hasOwnProperty('constructor')   );
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function ClassA(sColor) {
+        this.color = sColor;
+    }
+    ClassA.prototype.sayColor = function () {
+        alert(this.color);
+    };
+
+//    var oA = null;
+    function ClassB(sColor) {
+        /*this.fn = ClassA;
+        this.fn(sColor);
+        delete this.fn;*/
+        ClassA.call(this, sColor);
+//        oA = new ClassA(sColor);
+
+    }
+
+
+    ClassB.prototype = new ClassA();
+    ClassB.prototype.constructor = ClassB;
+
+
+    var o = new ClassB('blue');
+    o.sayColor();
+
+    console.log(o.constructor  );
+
+</script>
+</body>
+</html>

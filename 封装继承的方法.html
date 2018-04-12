@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function extend(className){
+
+        function Fn(){
+            className.apply(this, arguments);
+        }
+        Fn.prototype = new className();
+        Fn.prototype.constructor = Fn;
+        return Fn;
+    }
+
+    function Animal(name,age){
+        this.name = name;
+    }
+    Animal.prototype.say = function(){
+        alert(this.name);
+    };
+
+
+
+    var Cat = extend(Animal);
+    Cat.prototype.catchMouse = function(){
+        alert(this.name + ' is catching mouse!');
+    };
+
+
+    var cat1 = new Cat('mimi', 3);
+    cat1.catchMouse();
+
+</script>
+</body>
+</html>

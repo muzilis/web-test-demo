@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #a{
+            width: 300px;
+            height: 300px;
+            background: #ff0000;
+        }
+        #b{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+        }
+        #c{
+            width: 100px;
+            height: 100px;
+            background: #0000ff;
+        }
+    </style>
+
+</head>
+<body>
+<button id="btn">click</button>
+<div id="a">a
+    <div id="b">b
+        <div id="c">c</div>
+    </div>
+</div>
+<a id="link" href="http://www.qq.com">qq</a>
+<ul id="ul1">
+    <li>111</li>
+    <li>222</li>
+</ul>
+<script>
+    /*var fn = function(){
+        alert(this.innerHTML);
+    };*/
+
+
+    var fn = function(){
+        alert(this);
+    };
+
+
+
+
+    var oBtn = document.getElementById('btn');
+    addEvent(oBtn, 'click', fn);
+    removeEvent(oBtn, 'click', fn);
+
+    function addEvent(elem, type, handler){
+        if(elem.addEventListener){
+            elem.addEventListener(type, handler, false);
+        }else if(elem.attachEvent){
+            elem[type+handler] = function(){
+                handler.call(elem);
+            };
+            elem.attachEvent('on'+type, elem[type+handler]);
+        }else{
+            elem['on'+type] = handler;
+        }
+    }
+
+    function removeEvent(elem, type, handler){
+        if(elem.removeEventListener){
+            elem.removeEventListener(type, handler, false);
+        }else if(elem.detachEvent){
+            elem.detachEvent('on'+type, elem[type+handler]);
+        }else{
+            elem['on'+type] = null;
+        }
+
+    }
+
+
+
+    /*oBtn.onclick = function(){
+        var oLi = document.createElement('li');
+        oLi.innerHTML = Math.random();
+//        oLi.onclick = fn;
+        oUl.appendChild(oLi);
+    };*/
+
+    /*oBtn.addEventListener('click', function(){
+        alert(1);
+    }, false);
+    oBtn.addEventListener('click', function(){
+        alert(2);
+    }, false);*/
+
+    /*oBtn.attachEvent('onclick', function(){
+        alert(1);
+    });
+    oBtn.attachEvent('onclick', function(){
+        alert(2);
+    });*/
+
+    var oA = document.getElementById('a');
+    var oB = document.getElementById('b');
+    var oC = document.getElementById('c');
+    /*oA.addEventListener('click', function(e){
+        alert('a');
+    }, false);
+    oB.addEventListener('click', function(){
+        alert('b');
+    }, false);
+    oC.addEventListener('click', function(e){
+        alert('c');
+        e.stopPropagation();
+
+    }, false);*/
+
+    /*oA.attachEvent('onclick', function(){
+        alert('a');
+    });
+    oB.attachEvent('onclick', function(){
+        alert('b');
+    });
+    oC.attachEvent('onclick', function(){
+        alert('c');
+        window.event.cancelBubble = true;
+    });*/
+
+    /*var oLink = document.getElementById('link');
+
+    oLink.onclick = function(e){
+        e = e || window.event;
+
+        //e.preventDefault();
+
+        window.event.returnValue = false;
+    };*/
+
+    /*var oUl = document.getElementById('ul1');
+    //事件委托、事件代理
+    oUl.onclick = function(e){
+        e = e || window.event;
+        console.log(e);
+        var target = e.target || e.srcElement;
+        if(target.tagName == 'LI'){
+           alert(target.innerHTML);
+        }
+    };*/
+    /*var aLi = oUl.getElementsByTagName('li');
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].onclick = function(){
+            alert(this.innerHTML);
+        };
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

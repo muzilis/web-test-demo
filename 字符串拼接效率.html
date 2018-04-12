@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="ul1">
+
+</ul>
+<script>
+    //var str = '';
+    var arr = [];
+    var startTime = new Date();
+    for(var i=0; i<10000; i++){
+        arr.push('<li>'+Math.random()+'</li>');
+        //str += '<li>'+Math.random()+'</li>';
+//        var oLi = document.createElement('li');
+    }
+    var endTime = new Date();
+    alert(endTime.getTime() - startTime.getTime());
+    var oUl = document.getElementById('ul1');
+    oUl.innerHTML = arr.join('');//<li></li><li></li>
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*var a = function(){
+        alert('haha');
+    };*/
+
+    function b(){
+        return function(str){
+            alert(str);
+        };
+    }
+
+    b()(function(){
+        var a = 5;
+        var b = 4;
+        return a + b;
+    }());
+
+</script>
+</body>
+</html>

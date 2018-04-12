@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn">click</button>
+<script>
+
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function(){
+        /*var self = this;
+        setTimeout(function(){
+           self.style.background = 'red';
+        }, 2000);*/
+
+        this.style.background = 'red';
+    };
+
+
+    oBtn.onclick.call(document.body);
+
+
+</script>
+</body>
+</html>

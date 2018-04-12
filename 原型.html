@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    var obj = new Object();
+    obj.name = 'lisi';
+
+    obj = {
+        age: 'wangwu'
+    };
+    obj.name = 'lisi';
+
+    function Person(name){
+        this.name = name;
+    }
+    /*Person.prototype.sayHello = function(){
+
+    };*/
+    Person.prototype = {
+        sayHello: function(){
+            alert(this.name);
+        }
+    };
+
+
+    var p1 = new Person('lisi');
+
+    p1.sayHello();
+
+
+</script>
+</body>
+</html>

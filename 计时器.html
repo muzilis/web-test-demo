@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn">click</button>
+<script>
+    /*var timer = setInterval(function(){
+
+        alert(111);
+       setTimeout(function(){
+           clearInterval(timer);
+       }, 6000)
+
+    }, 2000);
+
+    alert(timer);*/
+
+    /*var fn = function(){
+        console.log(111);
+    };
+
+    setInterval('fn()', 1000);*/
+
+    var oBtn = document.getElementById('btn');
+    var timer;
+    oBtn.onclick = function(){
+        /*clearInterval(timer);
+        timer = setInterval(function(){
+            console.log(111);
+        }, 1000)*/
+
+        /*var index = 0;
+        for(var i=0; i<10; i++){
+            setTimeout(function(){
+                console.log(index++);
+            }, (i+1)*1000);
+        }*/
+        var index = 0;
+        var timer = setInterval(function(){
+            console.log(index);
+            index++;
+            if(index == 10){
+                clearInterval(timer);
+//                alert(123);
+
+            }
+        }, 100);
+
+    };
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

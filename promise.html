@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var deferred = function(fun){
+        return {
+            done: function(fn){
+                fun(function(data){
+                    fn(data);
+                });
+            }
+
+        };
+    };
+
+    var promise = deferred(function(callback){
+        setTimeout(function(){
+            callback("hello");
+        },3000);
+    });
+
+    promise.done(function(data){
+        console.info(data);
+    });
+</script>
+</body>
+</html>

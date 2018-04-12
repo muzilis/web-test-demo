@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    aa();
+    function aa(name, age){//函数声明
+        alert(name);
+        //console.log(name);
+    }
+    var aa = function(name){//函数表达式
+        alert(name);
+    };
+
+    //var aa = new Function('name', 'age', 'alert(name + ", " + age); var a = 5;');
+
+    var aa;
+    if(1==2){
+        aa = new Function('name', 'alert(name);');
+    }else{
+        aa = new Function('name', 'console.log(name);');
+
+    }
+
+    aa('lisi');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

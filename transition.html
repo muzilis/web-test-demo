@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            /*-webkit-transition: all 2s ease;
+            -moz-transition: all 2s ease;
+            -ms-transition: all 2s ease;
+            -o-transition: all 2s ease;
+            transition: all 2s ease;*/
+            /*-webkit-transition-property: all;
+            -webkit-transition-duration: 2s;
+            -webkit-transition-timing-function: ease;*/
+        }
+        /*#div1:hover{
+            width: 300px;
+            height: 300px;
+            -webkit-animation: xxx 2s ease forwards;
+        }*/
+        @-webkit-keyframes xxx {
+            0%{
+                width: 200px;
+                height: 200px;
+            }
+
+            50%{
+                width: 300px;
+                height: 300px;
+            }
+            100%{
+                width: 250px;
+                height: 250px;
+            }
+         }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    var oDiv = document.getElementById('div1');
+    oDiv.onclick = function(){
+
+
+        this.style.WebkitAnimation = 'xxx 2s ease forwards infinite';
+
+
+
+
+
+
+
+
+
+
+    };
+</script>
+</body>
+</html>

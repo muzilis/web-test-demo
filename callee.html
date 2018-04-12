@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function fact(n){
+        console.log(arguments.callee == fact);
+        if(n <= 1){
+            return 1;
+        }
+        return n * arguments.callee(n-1);
+    }
+
+    //arguments.callee指代当前正在执行的函数
+
+    alert(  fact(3)  );
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <h1>haha</h1>
+    <p>xixi</p>
+</div>
+<script>
+    //dom查找
+    //1. document.getElementById();
+    //2. element.getElementsByTagName();
+    //3. element.getElementsByClassName();
+    //4. document.getElementsByName();
+    //5. document.querySelector();
+    //6. document.querySelectorAll();
+
+    //dom遍历
+    //1. parent.childNodes/parent.children
+    //2. element.nextSibling/nextElementSibing
+    //3. element.previousSibling/previousElementSibling
+    //4. parent.firstChild/firstElementChild
+    //5. parent.lastChild/lastElementChild
+    //6. element.parentNode/offsetParent
+
+    //dom操纵
+    //1. document.createElement();
+    //2. parent.appendChild();
+    //3. parent.removeChild();// element.parentNode.removeChild(element);
+    //4. parent.insertBefore(newNode, oldNode);
+    //5. parent.replaceChild(newNode, oldNode);
+    //6. element.aa = bb/element.setAttribute('aa', bb)/element.getAttribute('aa');
+    //7. parent.innerHTML = '<h1>haha</h1>'/parent.innerText = '<h1>haha</h1>';
+
+    var oDiv = document.getElementById('div1');
+//    alert(  getComputedStyle(oDiv,false).width   );
+//    alert(  oDiv.currentStyle.width   );
+
+    alert(    getStyle(oDiv, 'width')        );
+
+    function getStyle(elem, attr){
+        if(elem.currentStyle){
+            return elem.currentStyle[attr];
+        }else{
+            return getComputedStyle(elem, false)[attr];
+        }
+    }
+</script>
+</body>
+</html>

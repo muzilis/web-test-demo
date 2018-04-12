@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    /*
+    var o = {a:1, b:2};
+    var obj = Object.create(o);
+
+    alert(obj[a]);*/
+
+    //在js中除了Object之外，所有的对象都有一个与之关联的对象，这个对象就叫做：原型
+
+    /*var obj = {name: 'lisi'};
+
+    console.log(obj);*/
+
+
+    function Person(name){
+        this.name = name;
+//        this.sayHello = new Function();
+    }
+//    Person.prototype.brother = {name: 'lixxx'};
+
+    Person.prototype.sayHello = function(){
+
+    };
+
+    var p1 = new Person();
+    var p2 = new Person();
+
+//    p2.brother.name = 'zhaoliu';
+    p2.brother = {name: 'zhaoliu'};
+
+    console.log(p1.brother.name);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

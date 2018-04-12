@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #cccccc;
+        }
+        #div1{
+            width: 300px;
+            height: 300px;
+            background: url("1.png") no-repeat;
+        }
+        /*.test {
+            color: #ccc;
+            color: #090\9; *//* For IE8+ *//*
+            *color: #f00;  *//* For IE7 and earlier *//*
+            _color: #ff0;  *//* For IE6 and earlier *//*
+        }*/
+        * html .test { color: #090; }       /* For IE6 and earlier */
+        * + html .test { color: #ff0; }     /* For IE7 */
+        #div2{
+            background: #f00;
+            height: 5px;
+        }
+    </style>
+    <!--[if IE 6]>
+    <link rel="stylesheet" href="ie6_sb.css"/>
+    <![endif]-->
+</head>
+<body>
+
+<!--[if IE]>
+<p>你在非IE中将看不到我的身影</p>
+<![endif]-->
+
+
+<img src="prev.png" alt=""/>
+
+<div class="test">
+    xixi
+</div>
+
+
+<div id="div2"></div>
+
+
+
+<!--[if IE 6]>
+<script src="DD_belatedPNG_0.0.8a.js"></script>
+<script>
+    DD_belatedPNG.fix('*');
+</script>
+<![endif]-->
+
+</body>
+</html>
